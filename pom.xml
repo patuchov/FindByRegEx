@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.patuch.custom.factory</groupId>
+  <artifactId>custom-page-factory</artifactId>
+  <version>1.0</version>
+
+  <properties>
+    <selenium.version>3.14.0</selenium.version>
+    <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+    <apache.commons>3.1</apache.commons>
+    <source.version>1.8</source.version>
+    <target.version>1.8</target.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${apache.commons}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <source>${source.version}</source>
+          <target>${target.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
