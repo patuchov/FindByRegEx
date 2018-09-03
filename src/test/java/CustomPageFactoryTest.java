@@ -1,26 +1,28 @@
-package org.patuch.custom.factory.api;
-
+import inputclasses.MixOfFindBys;
+import inputclasses.NoRequiredArgsProvided;
+import inputclasses.NotEnoughArgs;
+import inputclasses.SingleFindByTemplate;
 import org.apache.commons.lang3.reflect.FieldUtils;
+
 import org.junit.Before;
-import org.junit.Rule;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.patuch.custom.factory.api.inputclasses.MixOfFindBys;
-import org.patuch.custom.factory.api.inputclasses.NoRequiredArgsProvided;
-import org.patuch.custom.factory.api.inputclasses.NotEnoughArgs;
-import org.patuch.custom.factory.api.inputclasses.SingleFindByTemplate;
+import org.patuch.custom.factory.api.CustomPageFactory;
 
 import java.lang.reflect.Field;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
+@RunWith(JUnit4.class)
 public class CustomPageFactoryTest {
 
-    WebDriver driver;
-    WebElement element;
+    private WebDriver driver;
+    private WebElement element;
 
     @Before
     public void setUp() {

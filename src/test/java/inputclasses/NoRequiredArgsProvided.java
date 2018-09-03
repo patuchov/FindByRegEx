@@ -1,4 +1,4 @@
-package org.patuch.custom.factory.api.inputclasses;
+package inputclasses;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

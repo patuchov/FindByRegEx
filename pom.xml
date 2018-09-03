@@ -15,6 +15,7 @@
       <source.version>1.8</source.version>
       <target.version>1.8</target.version>
       <mockito.version>1.10.19</mockito.version>
+      <surefire.version>2.22.0</surefire.version>
   </properties>
 
   <dependencies>
@@ -43,16 +44,27 @@
   </dependencies>
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven.compiler.plugin.version}</version>
-        <configuration>
-          <source>${source.version}</source>
-          <target>${target.version}</target>
-        </configuration>
-      </plugin>
-    </plugins>
+      <plugins>
+          <plugin>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>${maven.compiler.plugin.version}</version>
+              <configuration>
+                  <source>${source.version}</source>
+                  <target>${target.version}</target>
+              </configuration>
+          </plugin>
+          <plugin>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>${surefire.version}</version>
+              <dependencies>
+                  <dependency>
+                      <groupId>org.apache.maven.surefire</groupId>
+                      <artifactId>surefire-junit47</artifactId>
+                      <version>2.22.0</version>
+                  </dependency>
+              </dependencies>
+          </plugin>
+      </plugins>
   </build>
 
 </project>
