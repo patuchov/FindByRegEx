@@ -72,12 +72,4 @@ public class CustomPageFactory {
       throw new RuntimeException(e);
     }
   }
-
-  private static boolean isAnnotated(Field field) {
-    if (field.getAnnotation(FindByTemplate.class) == null) {
-      return false;
-    }
-
-    return true;
-  }
 }

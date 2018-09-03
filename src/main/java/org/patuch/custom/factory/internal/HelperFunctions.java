@@ -40,40 +40,7 @@ public class HelperFunctions {
   public static Class<?> getBaseInterface(Class<?> clazz) {
     return getBaseIface(clazz);
   }
-
-  public static Class<?> getBaseImplementation(Class<?> clazz, Class<?> iface) {
-    if ("WebElement".equals(iface.getSimpleName())) {
-      return iface;
-    }
-
-    if (isImplementingInterface(clazz, iface) && isTopClass(clazz.getSuperclass())) {
-      return clazz;
-    }
-
-    return getBaseImplementation(clazz.getSuperclass(), iface);
-  }
-
-  private static boolean isTopClass(Class<?> clazz) {
-    System.out.println("Super clazz " + clazz.getSimpleName());
-    if ("Object".equals(clazz.getSimpleName())) {
-      return true;
-    }
-
-    return false;
-  }
-
-  private static boolean isImplementingInterface(Class<?> clazz, Class<?> expectedInterface) {
-    if (expectedInterface.isInterface() && isDirectDescendant(expectedInterface)) {
-      if (ClassUtils.getAllInterfaces(clazz).get(0).equals(expectedInterface)) {
-        return true;
-      }
-
-      return false;
-    }
-
-    return false;
-  }
-
+  
   private static boolean isDirectDescendant(Class<?> clazz) {
     List<Class<?>> interfaces = ClassUtils.getAllInterfaces(clazz);
     if (REQUIRED_INTERFACES.containsAll(getIfacesNames(interfaces))) {
