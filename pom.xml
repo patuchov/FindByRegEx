@@ -9,24 +9,37 @@
   <version>1.0</version>
 
   <properties>
-    <selenium.version>3.14.0</selenium.version>
-    <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
-    <apache.commons>3.1</apache.commons>
-    <source.version>1.8</source.version>
-    <target.version>1.8</target.version>
+      <selenium.version>3.14.0</selenium.version>
+      <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+      <apache.commons>3.1</apache.commons>
+      <source.version>1.8</source.version>
+      <target.version>1.8</target.version>
+      <mockito.version>1.10.19</mockito.version>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>${selenium.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>${apache.commons}</version>
-    </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${apache.commons}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 
   <build>

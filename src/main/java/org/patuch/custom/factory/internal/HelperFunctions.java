@@ -40,7 +40,7 @@ public class HelperFunctions {
   public static Class<?> getBaseInterface(Class<?> clazz) {
     return getBaseIface(clazz);
   }
-  
+
   private static boolean isDirectDescendant(Class<?> clazz) {
     List<Class<?>> interfaces = ClassUtils.getAllInterfaces(clazz);
     if (REQUIRED_INTERFACES.containsAll(getIfacesNames(interfaces))) {
