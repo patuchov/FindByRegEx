@@ -74,7 +74,7 @@ public class CustomPageFactory {
   }
 
   private static boolean isAnnotated(Field field) {
-    if (field.getAnnotation(FindByRegEx.class) == null) {
+    if (field.getAnnotation(FindByTemplate.class) == null) {
       return false;
     }
 

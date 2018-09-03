@@ -83,7 +83,7 @@ public class CustomFieldDecorator implements FieldDecorator {
       return false;
     }
 
-    if (field.getAnnotation(FindByRegEx.class) == null) {
+    if (field.getAnnotation(FindByTemplate.class) == null) {
       return false;
     }
 

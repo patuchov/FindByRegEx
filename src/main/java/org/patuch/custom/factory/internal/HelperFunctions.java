@@ -17,7 +17,7 @@ public class HelperFunctions {
   private static final List<String> REQUIRED_INTERFACES = new ArrayList<String>(
     Arrays.asList("WebElement", "SearchContext", "TakesScreenshot", "WrapsElement", "Locatable"));
 
-  public static By getLocator(FindByRegEx findByRegEx, Field field, String[] args) {
+  public static By getLocator(FindByTemplate findByRegEx, Field field, String[] args) {
     if (isFieldSet(findByRegEx.css())) {
       return createLocatorFromTemplate(findByRegEx.css(), How.CSS, field, args);
     } else if (isFieldSet(findByRegEx.xpath())) {
@@ -27,7 +27,7 @@ public class HelperFunctions {
     return buildByFromDefault(field);
   }
 
-  public static int getNumberOfRequiredParams(FindByRegEx findByRegEx) {
+  public static int getNumberOfRequiredParams(FindByTemplate findByRegEx) {
     if (isFieldSet(findByRegEx.css())) {
       return StringUtils.countMatches(findByRegEx.css(), "%");
     } else if (isFieldSet(findByRegEx.xpath())) {

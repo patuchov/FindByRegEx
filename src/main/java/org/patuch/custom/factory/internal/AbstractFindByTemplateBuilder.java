@@ -4,16 +4,16 @@ import org.openqa.selenium.By;
 
 import java.lang.reflect.Field;
 
-public abstract class AbstractFindByRegExBuilder {
+public abstract class AbstractFindByTemplateBuilder {
   public abstract By buildIt(Object annotation, Field field);
 
-  protected By buildByFromFindByRegEx(FindByRegEx findByRegEx) {
+  protected By buildByFromFindByTemplate(FindByTemplate findByRegEx) {
     By ans = buildByFromShortFindByRegEx(findByRegEx);
 
     return ans;
   }
 
-  protected By buildByFromShortFindByRegEx(FindByRegEx findByRegEx) {
+  protected By buildByFromShortFindByRegEx(FindByTemplate findByRegEx) {
 
     if (!"".equals(findByRegEx.css())) {
       return By.cssSelector(findByRegEx.css());

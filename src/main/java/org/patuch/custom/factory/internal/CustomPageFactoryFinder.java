@@ -7,5 +7,5 @@ import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CustomPageFactoryFinder {
-  Class<? extends AbstractFindByRegExBuilder> value();
+  Class<? extends AbstractFindByTemplateBuilder> value();
 }

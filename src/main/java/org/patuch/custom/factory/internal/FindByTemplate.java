@@ -10,15 +10,15 @@ import java.lang.reflect.Field;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})
-@CustomPageFactoryFinder(FindByRegEx.FindByRegExBuilder.class)
-public @interface FindByRegEx {
+@CustomPageFactoryFinder(FindByTemplate.FindByTemplateBuilder.class)
+public @interface FindByTemplate {
   String css() default "";
   String xpath() default "";
   boolean reuseArgs() default false;
 
-  public static class FindByRegExBuilder extends AbstractFindByRegExBuilder {
+  public static class FindByTemplateBuilder extends AbstractFindByTemplateBuilder {
     public By buildIt(Object annotation, Field field) {
-      FindByRegEx findByRegEx = (FindByRegEx) annotation;
+      FindByTemplate findByRegEx = (FindByTemplate) annotation;
 
       By ans = buildByFromShortFindByRegEx(findByRegEx);
 

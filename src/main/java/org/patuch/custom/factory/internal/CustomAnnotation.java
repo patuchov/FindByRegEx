@@ -54,7 +54,7 @@ public class CustomAnnotation extends Annotations {
   }
 
   private boolean isFindByRegEx() {
-    FindByRegEx findByRegEx = field.getAnnotation(FindByRegEx.class);
+    FindByTemplate findByRegEx = field.getAnnotation(FindByTemplate.class);
 
     if (findByRegEx == null) {
       return false;
@@ -99,7 +99,7 @@ public class CustomAnnotation extends Annotations {
   private By getByRegEx() {
     By locateBy = null;
 
-    FindByRegEx findByRegEx = field.getAnnotation(FindByRegEx.class);
+    FindByTemplate findByRegEx = field.getAnnotation(FindByTemplate.class);
 
     if (findByRegEx == null) {
       locateBy = super.buildByFromDefault();
